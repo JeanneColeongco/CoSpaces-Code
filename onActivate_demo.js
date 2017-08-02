@@ -2,7 +2,7 @@ var items = [];
 
 function randNumBetween(min, max) {
     return Math.random() * (max - min) + min;
-};
+}
 
 var count = 5; 
 for (var i = -5; i < count; i++) { 
