@@ -1,3 +1,5 @@
+//see space: https://cospac.es/zBRM
+
 var items = [];
 
 function randNumBetween(min, max) {
@@ -13,5 +15,5 @@ for (var i = -5; i < count; i++) {
 }
 
 items.forEach(function(item) {
-    item.move(0, 10);
+    item.move(0, 2);
 });
