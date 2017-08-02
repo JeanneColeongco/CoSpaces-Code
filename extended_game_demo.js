@@ -1,5 +1,5 @@
 //game instructions: Help clear the way! Click the rock to get rid of them! You can only click on the rocks saying even numbers! Click the cars to move them forward!
-//created billboard and set text in UI
+//created instructions billboard and set text directly in the scene
 //see space: https://cospac.es/GYws
 
 var time = 0;
