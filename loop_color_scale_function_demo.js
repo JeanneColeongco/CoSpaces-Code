@@ -2,9 +2,9 @@ function randNumBetween(min, max) {
     return Math.random() * (max - min) + min;
 }
 
-var count = 10; 
+var count = 5; 
 for (var i = -5; i < count; i++) { 
     var car = Scene.createItem("LP_Car", i, 5, 0); 
-    car.setColor(randNumBetween)
+    car.setColor(randNumBetween(0, 255), randNumBetween(0, 255), randNumBetween(0, 255))
     car.setScale(0.5);
 }
