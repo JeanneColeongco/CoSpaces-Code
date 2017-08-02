@@ -3,12 +3,13 @@
 //see space: https://cospac.es/GYws
 
 var time = 0;
+var cleared = 0;
 Scene.scheduleRepeating(function() {
-    var timer = Scene.getItem("timer"); 
+    var board = Scene.getItem("board");
     //the above assumes you created a billboard and named it "timer"
     //create a billbaord: Library > Building Blocks > third item from the left > drag to scene
     //name an item: double click on it in the scene, hover over the second icon, type desired name
-    timer.setText("Time: " + time);
+    board.setText("Cleared: " + cleared + "\nTime: " + time);
     time++;
 }, 1);
 
@@ -68,7 +69,8 @@ opponents.forEach(function(opponent) {
                     opponent.deleteFromScene();
                     var index = opponents.indexOf(opponent);
                     opponents.splice(index, 1);
-                    done.push(opponent)
+                    done.push(opponent);
+                    cleared++;
                 }
             })
         }
