@@ -1,4 +1,5 @@
 //environment created at https://studio.cospaces.io/#Gallery:37B06gl01mqnXFuMN90knO (copied to my spaces July 26, 2017)
+//see space: https://cospac.es/GdU3
 
 var camera = Scene.getCamera(); //gets camera item
 
