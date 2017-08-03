@@ -1,3 +1,5 @@
+//see space: https://cospac.es/OGlt
+
 //clears scene without camera so that player perspective is maintained
 Scene.clearWithoutCameras = function() {
     Scene.getItems().filter(function(item) {        
