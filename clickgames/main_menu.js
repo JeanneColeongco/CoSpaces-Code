@@ -1,3 +1,6 @@
+//see space: https://cospac.es/SBnH
+//navigate to scene 1 with the toggle at the bottom of the scene
+
 //buttons (billboards) need to be clicked and dragged directly onto the scene from Library > Building Blocks
 //otherwise onActivate breaks
 //for using getItem, make sure to either use the item id or the custom name you created for your button
