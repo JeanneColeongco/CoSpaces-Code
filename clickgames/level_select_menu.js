@@ -1,5 +1,10 @@
 //see space: https://cospac.es/SBnH
-//navigate to second scene with the toggle at the bottom of the screen
+//navigate to second scene with the toggle at the bottom of the scene
+
+//buttons (billboards, animal items) need to be clicked and dragged directly onto the scene from Library > Building Blocks or Library > 3D Low Poly
+//otherwise onActivate breaks
+//for using getItem, make sure to either use the item id or the custom name you created for your button
+//full explanation here: https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!msg/cospaces-group/fxJbBmVq3sc/qDsaLTXQAwAJ
 
 /*
 player object
