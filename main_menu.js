@@ -3,6 +3,13 @@
 //for using getItem, make sure to either use the item id or the custom name you created for your button
 //full explanation here: https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!msg/cospaces-group/fxJbBmVq3sc/qDsaLTXQAwAJ
 
+/*
+every created item and scene in CoSpaces has it's own unique item id 
+you would need to access the ids of your item(s) and scene(s)
+items: double click item > click first icon > click copy id
+scene: click environment > copy id in top right corner of pop-up
+*/
+
 //play button
 var gameName = Scene.getItem('Play');
 gameName.onActivate(function() {
