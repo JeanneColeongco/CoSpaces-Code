@@ -6,11 +6,11 @@ The CoSpaces programming environment may not render scenes reliably either on th
 Note on CoSpaces IDs:
 Every created item and scene in CoSpaces has it's own unique item id.
 You would need to access the ids of your item(s) and scene(s).
-For items: double click item > click first icon > click copy id
-For scenes: click environment > copy id in top right corner of pop-up
+For items: double click item > click first icon > click copy id.
+For scenes: click environment > copy id in top right corner of pop-up.
 
 Note on CoSpaces getItem function:
 getItem function assumes you have created an item directly in the scene to be accessed via id or name.
-Setting item name: double click item > click second item > type desired name > make sure to hit enter to save changes
+Setting item name: double click item > click second item > type desired name > make sure to hit enter to save changes.
 
 This is a research project for the University of Alberta Computing Science Department High School Internship Program.
