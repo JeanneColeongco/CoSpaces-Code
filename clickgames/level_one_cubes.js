@@ -1,4 +1,6 @@
-//clears the scene with the exception of the items with these ids
+//clears the scene with the exception of the items with these unique ids
+//note that any items you create will have their own ids
+//double click on items then click the first icon in the drop down that pops up to access them
 function clearWithout() {
     Scene.getItems().forEach(function(item) {
         if(item.id() !== "jhQlZHx1Vp" && //camera
@@ -74,7 +76,8 @@ Cube.prototype.getSpawnPos = function() {
 //generate cube
 Cube.prototype.spawn = function() {
   var spawnPos = this.getSpawnPos();
-  this.item = Scene.createItem('Cuboid', spawnPos.x, spawnPos.y, spawnPos.z);
+  this.item = Scene.createItem('Cuboid', spawnPos.x, spawnPos.y, spawnPos.z); 
+  //can create items other than a cube by using a different id from "Cuboid" (see CoSpaces API for list of ids)
   return this;
 };
 
@@ -168,5 +171,5 @@ Scene.scheduleRepeating(function() {
   var score = Scene.getItem("score");
   score.setFontSize(0.2);
   score.setText("Score:" + clickCounter + "\nTime:" + Math.floor(Scene.currentTime()));
-  
+                                          //rounds down the current time of the scene (scene time starts at 0 and increases)
 }, 0);
