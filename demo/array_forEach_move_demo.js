@@ -1,4 +1,4 @@
-//see space: https://cospac.es/zBRM
+//see space: https://cospac.es/zBRM (scene includes onActivate)
 
 var items = []; //declare empty array for later use
 
