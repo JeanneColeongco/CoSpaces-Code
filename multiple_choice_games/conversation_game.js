@@ -82,7 +82,7 @@ button.onActivate(function() {
         tryAgain.setText("Try Again");
         tryAgain.onActivate(function() {
             tryAgain.deleteFromScene();
-            character.say("Hi!");
+            init();
         })
     }
 
@@ -124,7 +124,7 @@ button.onActivate(function() {
             tryAgain.setText("Try Again");
             tryAgain.onActivate(function() {
                 tryAgain.deleteFromScene();
-                character.say("How's it going?");
+                next();
             })
         }
 
