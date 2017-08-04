@@ -25,6 +25,6 @@ for (var i = -5; i < count; i++) {
 
 //for each car in the items array...
 items.forEach(function(item) {
-    //move the item 2 units along the y axis
+    //move the item 2 units along the y axis (forward from default camera view)
     item.move(0, 2);
 });
