@@ -1,3 +1,5 @@
+//see space: https://cospac.es/zBRM
+
 var items = []; //declaring empty array for later use
 
 //generates random number between a minimum and maximum
