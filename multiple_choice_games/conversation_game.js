@@ -57,7 +57,7 @@ button.onActivate(function() {
     //creates player character using playerID set from earlier depending on whether woman or man was clicked
     var player = Scene.createItem(playerID, 0, -1, 0);
 
-    //makes game character start the conversation if called on
+    //if called on, makes game character start the conversation 
     function init() {
         character.say("Hi!")
     };
@@ -75,7 +75,7 @@ button.onActivate(function() {
         response3.deleteFromScene();
     })
 
-    //if called, handles game character response to player's wrong choice
+    //if called on, handles game character response to player's wrong choice
     function tryAgain() {
         character.say("Uh...");
         var tryAgain = Scene.createTextBillboard(0, 5, 3);
