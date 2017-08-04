@@ -1,6 +1,6 @@
 //see space: https://cospac.es/OGlt
 
-//just edit the ".say()" values to customize the game to your needs
+//just edit the ".say()" and ".setText()" values to customize the game to your needs
 
 //clears scene without camera so that player perspective is maintained
 Scene.clearWithoutCameras = function() {
