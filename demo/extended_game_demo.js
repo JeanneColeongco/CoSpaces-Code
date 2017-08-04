@@ -58,22 +58,30 @@ for (var i = -2; i < countI; i++) {
 var nums = [];
 var done = [];
 
+//for every opponent in the opponents array...
 opponents.forEach(function(opponent) {
+    //check if opponent is being hovered over...
     opponent.onHover(function(isHovered) {
+        //if it is, display a random number between 0 and 100...
         if (isHovered) {
             var num = Math.round(randNumBetween(0, 100));
             nums.push(num);
             opponent.say(num);
+            //if the opponent is clicked...
             opponent.onActivate(function() {
+                //and the number displayed is evenly divisible by two...
                 if (num%2 === 0) {
+                    //delete the opponent from the scene...
                     opponent.deleteFromScene();
                     var index = opponents.indexOf(opponent);
                     opponents.splice(index, 1);
                     done.push(opponent);
+                    //and give the player a point...
                     cleared++;
                 }
             })
         }
+        //otherwise, display nothing
         else {
             opponent.say("");
         }
