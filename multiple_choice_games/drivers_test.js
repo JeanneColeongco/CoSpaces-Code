@@ -1,6 +1,7 @@
 //see space: https://cospac.es/GdU3
 
 //just edit the "setText()" values to customize the game to your needs
+//can work for different scenes and items just need to change the item ids
 
 //environment created at https://studio.cospaces.io/#Gallery:37B06gl01mqnXFuMN90knO (copied to My Spaces July 26, 2017)
 
@@ -155,9 +156,6 @@ Scene.scheduleRepeating(function() {
     }
 
     //copy, paste, edit, repeat!
-    //can absolutely work for different scenes and items...
-    //...just need to change the item ids
-
 }, 0);
 
 
