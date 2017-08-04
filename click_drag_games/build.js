@@ -1,6 +1,6 @@
 //see space: https://cospac.es/Iv0o
 
-//just use your own item ids to customize your own game
+//just use your own item ids to customize your own game (e.g. spheres instead of cubes)
 //possible extensions: rules for the game, win and lose states, scorekeeper, timekeeper, game instructions
 //e.g. for each tower of 5 blocks, you get 1 point
 //e.g. block tower tetris wherein colors matter (or don't matter)
