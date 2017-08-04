@@ -192,7 +192,7 @@ Scene.scheduleRepeating(function() {
   
   var howToPlay = Scene.getItem("How to Play");
   howToPlay.onActivate(function() {
-      howToPlay.showInfoPanel("How to Play", null, "Click the elephants to avoid getting trampled by them!", true, null);
+      howToPlay.showInfoPanel("How to Play", null, "Pan around to move away from the elephants and avoid getting trampled by them!", true, null);
   });
 
   var cameraH = Scene.getCamera();
