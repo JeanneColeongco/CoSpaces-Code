@@ -155,6 +155,8 @@ Scene.scheduleRepeating(function() {
     }
 
     //copy, paste, edit, repeat!
+    //can absolutely work for different scenes and items...
+    //...just need to change the item ids
 
 }, 0);
 
