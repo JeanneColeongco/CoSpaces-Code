@@ -1,5 +1,8 @@
 //see space: https://cospac.es/OGlt
 
+//possible customizations/extensions: 
+//multiple people to "talk" to, "talk" in a different language to learn it, solve a mystery after interviewing suspects, etc.
+
 //just edit the ".say()" and ".setText()" values to customize the game to your needs
 
 //clears scene without camera so that player perspective is maintained
@@ -153,7 +156,7 @@ button.onActivate(function() {
     }
 
     //copy/paste/edit repeat! 
-    //use "next" function so that the response variable names can stay the same...
+    //copy/paste/edit "next" function so that the response variable names can stay the same...
     //then you can just change the values of the speech bubbles and choices...
     //you could even make it so that there's no wrong answer, just different reactions to different answers
 });
