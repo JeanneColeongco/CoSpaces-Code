@@ -1,37 +1,54 @@
+//see space: https://cospac.es/SBnH
+//navigate to scene 5 using toggle at the bottom of scene
+
+//if called on, clears scene without camera to maintain player perspective
 Scene.clearWithoutCameras = function() {
+    //gets all the items in the scene
     Scene.getItems().filter(function(item) {
-        var isCamera = false;
+        var isCamera = false; //sets variable to false
+        //checks item properties for unique camera property
         for(var prop in item) {
+            //if unique camera property is found, set variable to true
             if(prop === 'setFov') isCamera = true;
         }
-        if(!isCamera) item.deleteFromScene();
+        //anything that doesn't have the unqiue camera property and therefore isn't the camera, delete
+        if(!isCamera) item.deleteFromScene();  
     });
 };
 
+//assumes you have created an items directly in the scene and game them custom names of "marker" and "button"
+//create marker item: click library > graphics > second item from the left
+//create button item: click library > building blocks > take your pick or library > 3D low poly objects > take your pick
+//naming items: double click item in scene > click second item in pop-up menu > type desired name > hit enter to save changes
 var marker = Scene.getItem('marker');
 var button = Scene.getItem('button');
 
-var buttonPos;
+var buttonPos; //creating variable for later use
 
-button.setOpacity(0);
+button.setOpacity(0); //make button invisible so it won't block view
 
 //button.addMoveOnSphereInteraction();
 
-button.addMoveOnItemInteraction(marker)
+button.addMoveOnItemInteraction(marker) //enables button to be clicked and dragged within marker
+
+//repeatedly...
 Scene.scheduleRepeating(function() {
-  buttonPos = button.getPosition();
-  camera.item.moveLinear(buttonPos.x, buttonPos.y, 1.7, 2);
+  buttonPos = button.getPosition(); //get button position
+  camera.item.moveLinear(buttonPos.x, buttonPos.y, 1.7, 2); //move the camera towards button position
 }, 0);
 
 
-Scene.renderShadows(false);
+Scene.renderShadows(false); //don't show object shadows
 
 //Function for calculating position of targets and deciding their properties
 var maker = {
+  //generates a random number between a minimum and maximum
   randNumBetween: function(min, max) {
     return Math.random() * (max - min) + min;
 
   },
+  //not really neccessary, only if you want to add other items that should act similarly to elephant
+  //then type "inheritsFrom(newItem, Elephant);" instead of repeatedly creating all prototype functions
   inheritsFrom: function(child, parent) {
     child.prototype = Object.create(parent.prototype);
   }
