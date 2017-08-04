@@ -1,1 +1,1 @@
-This is sort of an example of many modifications and additions that can be done to a base game (level_one_cubes) to make it more visually appealing and more fun to play. Original code is sourced from CoSpaces' own Zombie game. 
+This is an example project of many modifications and additions that can be done to a base game (level_one_cubes) to make it more visually appealing and more fun to play. Original code is sourced from CoSpaces' own Zombie game. 
