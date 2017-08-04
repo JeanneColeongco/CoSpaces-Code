@@ -1,3 +1,5 @@
+//see space: https://cospac.es/zXnZ
+
 //creates car item five units on the y axis (forward from default camera view)
 var item = Scene.createItem("LP_Car", 0, 5, 0); 
 
