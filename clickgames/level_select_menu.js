@@ -48,19 +48,19 @@ dog.onActivate(function() {
     Space.goTo("3tEosaTcOV4ztf4X3l0LTy"); //unique scene id
 });
 
-//level 4 - Click Avoid (Elephant Herd)
+//level 4 - TBA
 var horse = Scene.getItem("MJxslljugV"); //id for item placed directly in scene, can use any item from CoSpaces library
 horse.faceTo(player.item); //undocumented function, may change in the future
 horse.onActivate(function() {
-    Space.goTo("IjClgirjrsZ2cdylLtF2iF"); //unique scene id
+    horse.say("Level 4");
 });
 
-//level 5 - Shoot - TBA
+//level 5 - Avoid (Elephant Herd)
 //encountering issues with being able to shoot multiple fireballs while spawning cubes in a scheduleRepeating function
 var elephant = Scene.getItem("jTak57HjNC"); //id for item placed directly in scene, can use any item from CoSpaces library
 elephant.faceTo(player.item); //undocumented function, may change in the future
 elephant.onActivate(function() {
-    elephant.say("Level 5");
+    Space.goTo("IjClgirjrsZ2cdylLtF2iF"); //unique scene id
 });
 
 //back to menu button
