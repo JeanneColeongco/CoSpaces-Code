@@ -2,7 +2,7 @@
 
 //just edit the "setText()" values to customize the game to your needs
 
-//environment created at https://studio.cospaces.io/#Gallery:37B06gl01mqnXFuMN90knO (copied to my spaces July 26, 2017)
+//environment created at https://studio.cospaces.io/#Gallery:37B06gl01mqnXFuMN90knO (copied to My Spaces July 26, 2017)
 
 var camera = Scene.getCamera(); //gets camera item
 
@@ -58,6 +58,7 @@ Scene.scheduleRepeating(function() {
     /*
     every item created in CoSpaces has it's own unique id
     that can be used to access the item via getItem 
+    double click the scene item then click the first icon in the pop-up tab to access the id
     */
     var yieldSign = Scene.getItem("dvayVrrAch"); 
     //if sign is clicked, show a bunch of choices
