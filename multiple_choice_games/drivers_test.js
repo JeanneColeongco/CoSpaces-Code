@@ -32,8 +32,8 @@ Let the game begin
 *
 */
 
-//why does this break everything if I include it?
-//var engine = Scene.loadSound("G50xr5mne1YvshUNmal8LrPaPYXLU4qGnUyetjF4kih").play(true);
+var engine = Scene.loadSound("G50xr5mne1YvshUNmal8LrPaPYXLU4qGnUyetjF4kih").play();
+//why does this break Scene Item onActivates if I include it?
 //engine.setVolume(0.5);
 
 //declaring variable choiceA for later use...
