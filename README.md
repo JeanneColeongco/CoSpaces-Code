@@ -3,9 +3,9 @@ JavaScript code for programs on CoSpaces VR platform - demos or templates so tha
 
 CoSpaces has developed a unique set of functions for use in their programming environment. You can find them here: https://cospaces.io/api/. Any function not listed there (e.g. faceTo(), getCamera(), onCollisionEnter(), etc.) may be subject to change in the future. 
 
-Very helpful group of people: https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!forum/cospaces-scripting
+A very helpful group of people: https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!forum/cospaces-scripting
 
-The CoSpaces programming environment may not render scenes reliably either on the website or the app due to the active expansion and updating of their API and the fact that it’s a browser-based platform, however, for simpler beginner programs this should not be an issue.
+The CoSpaces programming environment may not render scenes reliably either on the website or the app due to the active expansion and updating of their API and the fact that it’s a browser-based platform, however, for simpler beginner programs this should not be an issue. Tip: only use loops if you absolutely have to and try not to use too many.
 
 Note on CoSpaces IDs:
 Every created item and scene in CoSpaces has it's own unique item id.
