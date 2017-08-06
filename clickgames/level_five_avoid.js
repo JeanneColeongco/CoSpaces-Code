@@ -61,7 +61,7 @@ function Camera() {
 function Elephant() {
   this.item = {}; 
   this.modelID = 'LP_Elephant';
-  this.sound = "8QdhikA36OXWCcedjDo44ZbN9cD0u9UpYbPOcy6MBn1"
+  this.sound = Scene.loadSound("8QdhikA36OXWCcedjDo44ZbN9cD0u9UpYbPOcy6MBn1");
 }
 
 Elephant.prototype.bindEvents = function() {
@@ -69,7 +69,7 @@ Elephant.prototype.bindEvents = function() {
   this.item.onHover(function(isHovered) {
     if (isHovered) {
       self.item.say("Get out of my way!");
-      this.sound.play(true);
+      this.item.sound.play();
     }
     else {
       self.item.say("");
@@ -78,7 +78,6 @@ Elephant.prototype.bindEvents = function() {
   this.item.onActivate(function() {
     self.item.deleteFromScene();
     self.remove();
-    clickCounter++;
   });
   return this;
 };
