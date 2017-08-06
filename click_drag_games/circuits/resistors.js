@@ -134,8 +134,9 @@ button3.setColor(220, 50, 50);
 
 Scene.renderShadows(false);
 
-//add tone variables + sound
-//see CoSpaces API for how to load sounds
+var lowTone = Scene.loadSound("aEbSltGR9p8Qm9g3P9JlHu4WnJ1WQULmzyPkyjr4Enx");
+var mediumTone = Scene.loadSound("aEbSltGR9p8Qm9g3P9JlHu4WnJ1WQULmzyPkyjr4Enx");
+var highTone = Scene.loadSound("6avUTYwJnXIWjTA98PgCH87DQzBg9fpwLCYlH7tqR24");
 
 //the big, BIG handler
 Scene.scheduleRepeating(function() {
@@ -147,7 +148,7 @@ Scene.scheduleRepeating(function() {
                         var electricity = Scene.createItem("LP_Lightning", spherePos.x, spherePos.y, spherePos.z+0.5);
                         var lowTone;
                         lowTone.play(false);
-                        Scene.schedule(lowTone.stop, 2);
+                        Scene.schedule(lowTone.stop, 1);
                 }
             }
         }
@@ -160,7 +161,7 @@ Scene.scheduleRepeating(function() {
                     var electricity2 = Scene.createItem("LP_Lightning", sphere2Pos.x, sphere2Pos.y, sphere2Pos.z+0.5);
                     var mediumTone;
                     mediumTone.play(false);
-                    Scene.schedule(mediumTone.stop, 2);
+                    Scene.schedule(mediumTone.stop, 1);
                 }
             }
         }
@@ -173,7 +174,7 @@ Scene.scheduleRepeating(function() {
                     var electricity3 = Scene.createItem("LP_Lightning", sphere3Pos.x, sphere3Pos.y, sphere3Pos.z+0.5);
                     var highTone;
                     highTone.play(false);
-                    Scene.schedule(highTone.stop, 2);
+                    Scene.schedule(highTone.stop, 1);
                 }
             }
         }
