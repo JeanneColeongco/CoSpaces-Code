@@ -10,4 +10,6 @@ item.setColor(255, 0, 0); //set the color to red - parameters are (r, g, b)
 item.onActivate(function() {
     //...move the item 2 pixels along the y axis (forward from default camera view)
     item.move(0, 2);
+    //bonus... rev your engine every time the car moves forward
+    Scene.loadSound("8tPh5sReqZUKkTdALbhlkdAwPykrFb6tHnNS0QC9ivN").play();
 });
