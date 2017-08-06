@@ -1,3 +1,6 @@
+//see space: https://cospac.es/5wxD
+//navigate to scene 1 using the toggle at the bottom of the scene
+
 //if beaker contents is clicked, a catalyst/enzyme/what-have-you is dropped in...
 //and the appropriate functions are called to simulate the reaction
 acid.onActivate(function() {
