@@ -138,9 +138,10 @@ Scene.scheduleRepeating(function() {
 
   /*
   *
-  * HUD - Heads-Up Display
+  * HUD - Heads-Up Display - doesn't work in VR mode because pointer is always in centre of screen
   *
   */
+  /*
   var cameraH = Scene.getCamera(); //gets camera item
 
   //Enter ItemID or custom name here
@@ -166,6 +167,7 @@ Scene.scheduleRepeating(function() {
 
   //Turn pivot object invisible so it does not block clicks
   pivot.setOpacity(0);
+*/
 
   //repeatedly updating scoreboard text
   var score = Scene.getItem("score");
