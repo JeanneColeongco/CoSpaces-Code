@@ -3,7 +3,6 @@
 
 //just use your own item ids to customize your own game
 //e.g. click and drag to match a Library > 3D low poly item with a word (chair, house, etc.)
-//e.g. click and drag to form a complete puzzle (upload image fragments - see CoSpaces YouTube for how-to)
 
 function delay() { //wrapping everything in a function for later use
 
