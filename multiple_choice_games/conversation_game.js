@@ -26,10 +26,8 @@ var charSel = Scene.createTextBillboard(0, 5, 3);
 charSel.setText("Select Character then click Play");
 
 //creating player character forms
-var playerChar1 = Scene.createItem("LP_Wom", -3, 7, 0);
-playerChar1.setPositionAngle(-3, 7, 0, 0, 0, 10, 3.14159); //180 degree rotation to face camera
-var playerChar2 = Scene.createItem("LP_Man", 3, 7, 0);
-playerChar2.setPositionAngle(3, 7, 0, 0, 0, 10, 3.14159); //180 degree rotation to face camera
+var playerChar1 = Scene.getItem("Woman"); //assumes you have created an item directly in scene and gave it the custom name "Woman"
+var playerChar2 = Scene.getItem("Man"); //assumes you have created an item directly in scene and gave it the custom name "Man"
 
 //declaring variable playerID for later use...
 var playerID;
@@ -49,7 +47,7 @@ playerChar2.onActivate(function() {
 });
 
 //if button is clicked, clear the scene without the camera and start the game
-var button = Scene.getItem("Play");
+var button = Scene.getItem("Play"); //assumes you have created a billboard with the text set to the words "Play" and gave it the custom name "Play"
 button.onActivate(function() { 
     Scene.clearWithoutCameras();
 
