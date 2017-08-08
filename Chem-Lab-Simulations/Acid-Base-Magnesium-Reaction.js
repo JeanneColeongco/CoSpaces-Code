@@ -2,6 +2,8 @@
 //navigate to scene 1 using the toggle at the bottom of the scene
 //click the beaker contents to start the reaction
 
+//possible extensions/customizations: change the start and/or end color of the reaction
+
 function delay() { //wrapping everything in a function for later use
 
     //if called on, draws beaker (tall, four-sided, translucent container)
@@ -167,12 +169,14 @@ function delay() { //wrapping everything in a function for later use
             cube.setColor(100, 100, 100); //color cube gray
             cube.moveLinear(0, 3, 0, 1); //cube is slowly lowered down into the beaker
             
-            //and the appropriate functions are called to simulate the reaction
+            //and the appropriate functions are called to simulate the reaction if the catalyst/enzyme makes contact with the beaker contents
             cube.onCollisionEnter(function() {
-                bubbleUp();
-                changeColor();
-                base.dispose();
-                cube.deleteFromScene();
+                bubbleUp(); //making bubbles sound
+                changeColor(); //changing color of beaker contents
+                
+                //getting rid of catalyst/enzyme/base/what-have-you
+                base.dispose(); 
+                cube.deleteFromScene(); 
                 
                 //makes bubbles
                 var makeBubble = Scene.scheduleRepeating(function() {
