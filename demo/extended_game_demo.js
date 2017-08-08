@@ -1,6 +1,8 @@
 //see space: https://cospac.es/GYws
 
-//game instructions: Help clear the way! Click the rock to get rid of them! You can only click on the rocks saying even numbers! Click the cars to move them forward!
+//customization/extension suggestions (also in lesson plan): you're only able to click on one car while the others race against you, you can only click on one car while chasing a second, you can only click one car and need to avoid/stop so you don't hit randomly spawning obstacles, etc.
+
+//game instructions: Help clear the way! Click the rock to get rid of it! You can only click on the rocks saying even numbers! Click the cars to move them forward!
 //created instructions billboard and set text directly in the scene
 
 function delay() { //wrapping everything in a function for later use
