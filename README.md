@@ -5,7 +5,7 @@ CoSpaces has developed a unique set of functions for use in their programming en
 
 A very helpful group of people: https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!forum/cospaces-scripting
 
-The CoSpaces programming environment may not render scenes reliably either on the website or the app due to the active expansion and updating of their API and the fact that it’s a browser-based platform, however, for simpler beginner programs this should not be an issue. Tip: only use loops if you absolutely have to and try not to use too many. And if interactivity functions like onActivate and onHover don't work in VR mode, put all your code inside a function, call it using CoSpaces' schedule function with a delay of about 2 seconds to give the player time to put it in VR mode before the items render. Or create your items directly in the scene. See programs for examples.
+The CoSpaces programming environment may not render scenes reliably either on the website or the app due to the active expansion and updating of their API and the fact that it’s a browser-based platform, however, for simpler beginner programs this should not be an issue. Tip: only use loops if you absolutely have to and try not to use too many. And if interactivity functions like onActivate and onHover don't work in VR mode, put all your code inside a function, call it using CoSpaces' schedule function with a delay of about 2 seconds to give the player time to put it in VR mode before the items render, or you can create your items directly in the scene (see programs for examples).
 
 Note on CoSpaces IDs:
 Every created item and scene in CoSpaces has it's own unique item id.
