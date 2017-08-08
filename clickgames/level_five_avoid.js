@@ -194,6 +194,8 @@ Scene.scheduleRepeating(function() {
       howToPlay.showInfoPanel("How to Play", null, "Pan around to move away from the elephants and avoid getting trampled by them!", true, null);
   });
 
+  //HUD - Heads-Up Display doesn't work in VR mode because pointer is always at centre of scene
+  /*
   var cameraH = Scene.getCamera();
 
   //Enter ItemID or custom name here
@@ -217,6 +219,8 @@ Scene.scheduleRepeating(function() {
 
   //Turn pivot object invisible so it does not block clicks
   pivot.setOpacity(0);
+  */
+  
   var time =  Math.floor(Scene.currentTime());
   score.setFontSize(0.2);
   score.setText("Time:" + time);
