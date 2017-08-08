@@ -1,6 +1,8 @@
 //see space: https://cospac.es/5wxD
 //navigate to scene 2 using the toggle at the bottom of the scene
 
+//possible extensions/customizations: a solid to gas reaction, a water cycle simulation, Hvap/Hfus equations display that updates repeatedly as the values change due to the progress of the reaction, add different water levels to initialize with, etc.
+
 function delay() { //wrapping everything in a function for later use
     //if called on, draws beaker
     //could make it so it's parametered and can draw a beaker anywhere on the screen
