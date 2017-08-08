@@ -7,10 +7,11 @@
 
 /*
 *
-* HUD - Heads-Up Display
+* HUD - Heads-Up Display - doesn't work in VR mode because the pointer is always at centre of screen
 *
 */
 
+/*
 var camera = Scene.getCamera();
 var camPos = camera.getPosition(); 
 var camDir = camera.getDirection(); 
@@ -38,7 +39,7 @@ Scene.scheduleRepeating(function(){
 
 //Turn pivot object invisible so it does not block clicks
 pivot.setOpacity(0);
-
+*/
 
 //color select, not working out right now...
 /*
