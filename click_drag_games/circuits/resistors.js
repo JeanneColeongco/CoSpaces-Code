@@ -26,51 +26,51 @@ function delay() { //wrapping everything in a function for later use
         }
     });
 
-    var sphere = Scene.createItem("Cuboid", -1.75, 2, 0);
-    sphere.setScale(0.5);
-    sphere.setColor(255, 0, 255);
-    sphere.say("I'm a buzzer! Sound me!");
-    var spherePos;
-    sphere.addMoveOnItemInteraction(marker, function() {
-        spherePos = sphere.getPosition();
-        sphere.say('x: ' + spherePos.x.toFixed(2) + ', y: ' + spherePos.y.toFixed(2));
-        if (spherePos.x >= 1.5 && spherePos.x <= 2.5 && spherePos.y >= 2.5 && spherePos.y <= 3.5) {
-            sphere.say("Looking good!")
+    var speaker = Scene.createItem("Cuboid", -1.75, 2, 0);
+    speaker.setScale(0.5);
+    speaker.setColor(255, 0, 255);
+    speaker.say("I'm a buzzer! Sound me!");
+    var speakerPos;
+    speaker.addMoveOnItemInteraction(marker, function() {
+        speakerPos = speaker.getPosition();
+        speaker.say('x: ' + speakerPos.x.toFixed(2) + ', y: ' + speakerPos.y.toFixed(2));
+        if (speakerPos.x >= 1.5 && speakerPos.x <= 2.5 && speakerPos.y >= 2.5 && speakerPos.y <= 3.5) {
+            speaker.say("Looking good!")
         }
         else {
-            sphere.say("Hmm... It doesn't look like I fit here.")
+            speaker.say("Hmm... It doesn't look like I fit here.")
         }
     });
 
-    var sphere2 = Scene.createItem("Cuboid", -1.75, 3, 0);
-    sphere2.setScale(0.5);
-    sphere2.setColor(0, 255, 0);
-    sphere2.say("I'm a buzzer! Sound me!");
-    var sphere2Pos;
-    sphere2.addMoveOnItemInteraction(marker, function() {
-        sphere2Pos = sphere2.getPosition();
-        sphere2.say('x: ' + sphere2Pos.x.toFixed(2) + ', y: ' + sphere2Pos.y.toFixed(2));
-        if (sphere2Pos.x >= 3 && sphere2Pos.x <= 4 && sphere2Pos.y >= 2.5 && sphere2Pos.y <= 3.5) {
-            sphere2.say("Looking good!")
+    var speaker2 = Scene.createItem("Cuboid", -1.75, 3, 0);
+    speaker2.setScale(0.5);
+    speaker2.setColor(0, 255, 0);
+    speaker2.say("I'm a buzzer! Sound me!");
+    var speaker2Pos;
+    speaker2.addMoveOnItemInteraction(marker, function() {
+        speaker2Pos = speaker2.getPosition();
+        speaker2.say('x: ' + speaker2Pos.x.toFixed(2) + ', y: ' + speaker2Pos.y.toFixed(2));
+        if (speaker2Pos.x >= 3 && speaker2Pos.x <= 4 && speaker2Pos.y >= 2.5 && speaker2Pos.y <= 3.5) {
+            speaker2.say("Looking good!")
         }
         else {
-            sphere2.say("Hmm... It doesn't look like I fit here.")
+            speaker2.say("Hmm... It doesn't look like I fit here.")
         }
     });
 
-    var sphere3 = Scene.createItem("Cuboid", -1.75, 4, 0);
-    sphere3.setScale(0.5);
-    sphere3.setColor(0, 0, 0);
-    sphere3.say("I'm a buzzer! Sound me!");
-    var sphere3Pos;
-    sphere3.addMoveOnItemInteraction(marker, function() {
-        sphere3Pos = sphere3.getPosition();
-        sphere3.say('x: ' + sphere3Pos.x.toFixed(2) + ', y: ' + sphere3Pos.y.toFixed(2));
-        if (sphere3Pos.x >= 4.5 && sphere3Pos.x <= 5.5 && sphere3Pos.y >= 2.5 && sphere3Pos.y <= 3.5) {
-            sphere3.say("Looking good!")
+    var speaker3 = Scene.createItem("Cuboid", -1.75, 4, 0);
+    speaker3.setScale(0.5);
+    speaker3.setColor(0, 0, 0);
+    speaker3.say("I'm a buzzer! Sound me!");
+    var speaker3Pos;
+    speaker3.addMoveOnItemInteraction(marker, function() {
+        speaker3Pos = speaker3.getPosition();
+        speaker3.say('x: ' + speaker3Pos.x.toFixed(2) + ', y: ' + speaker3Pos.y.toFixed(2));
+        if (speaker3Pos.x >= 4.5 && speaker3Pos.x <= 5.5 && speaker3Pos.y >= 2.5 && speaker3Pos.y <= 3.5) {
+            speaker3.say("Looking good!")
         }
         else {
-            sphere3.say("Hmm... It doesn't look like I fit here.")
+            speaker3.say("Hmm... It doesn't look like I fit here.")
         }
     });
 
@@ -149,11 +149,11 @@ function delay() { //wrapping everything in a function for later use
         button.onActivate(function() {
             if (cubePos.x >= 1 && cubePos.x <= 2 && cubePos.y >= 0 && cubePos.y <= 1) {
                 if (resistorPos.x >= 1.5 && resistorPos.x <= 2.5 && resistorPos.y >= 1 && resistorPos.y <= 2) {
-                    if (spherePos.x >= 1.5 && spherePos.x <= 2.5 && spherePos.y >= 2.5 && spherePos.y <= 3.5) {
-                            sphere.say("I'm on!");
-                            var electricity = Scene.createItem("LP_Lightning", spherePos.x, spherePos.y, spherePos.z+0.5);
+                    if (speakerPos.x >= 1.5 && speakerPos.x <= 2.5 && speakerPos.y >= 2.5 && speakerPos.y <= 3.5) {
+                            speaker.say("I'm on!");
+                            var electricity = Scene.createItem("LP_Lightning", speakerPos.x, speakerPos.y, speakerPos.z+0.5);
                             lowTone.play(false);
-                            Scene.schedule(lowTone.stop, 1);
+                            Scene.schedule(lowTone.stop, 1); //stops tone after 1 second
                     }
                 }
             }
@@ -161,11 +161,11 @@ function delay() { //wrapping everything in a function for later use
         button2.onActivate(function() {
             if (cubePos.x >= 1 && cubePos.x <= 2 && cubePos.y >= 0 && cubePos.y <= 1) {
                 if (r2Pos.x >= 3 && r2Pos.x <= 4 && r2Pos.y >= 1 && r2Pos.y <= 2) {
-                    if (sphere2Pos.x >= 3 && sphere2Pos.x <= 4 && sphere2Pos.y >= 2.5 && sphere2Pos.y <= 3.5) {
-                        sphere2.say("I'm on!");
-                        var electricity2 = Scene.createItem("LP_Lightning", sphere2Pos.x, sphere2Pos.y, sphere2Pos.z+0.5);
+                    if (speaker2Pos.x >= 3 && speaker2Pos.x <= 4 && speaker2Pos.y >= 2.5 && speaker2Pos.y <= 3.5) {
+                        speaker2.say("I'm on!");
+                        var electricity2 = Scene.createItem("LP_Lightning", speaker2Pos.x, speaker2Pos.y, speaker2Pos.z+0.5);
                         mediumTone.play(false);
-                        Scene.schedule(mediumTone.stop, 1);
+                        Scene.schedule(mediumTone.stop, 1); //stops tone after 1 second
                     }
                 }
             }
@@ -173,11 +173,11 @@ function delay() { //wrapping everything in a function for later use
         button3.onActivate(function() {
             if (cubePos.x >= 1 && cubePos.x <= 2 && cubePos.y >= 0 && cubePos.y <= 1) {
                 if (r3Pos.x >= 4.5 && r3Pos.x <= 5.5 && r3Pos.y >= 1 && r3Pos.y <= 2) {
-                    if (sphere3Pos.x >= 4.5 && sphere3Pos.x <= 5.5 && sphere3Pos.y >= 2.5 && sphere3Pos.y <= 3.5) {
-                        sphere3.say("I'm on!");
-                        var electricity3 = Scene.createItem("LP_Lightning", sphere3Pos.x, sphere3Pos.y, sphere3Pos.z+0.5);
+                    if (speaker3Pos.x >= 4.5 && speaker3Pos.x <= 5.5 && speaker3Pos.y >= 2.5 && speaker3Pos.y <= 3.5) {
+                        speaker3.say("I'm on!");
+                        var electricity3 = Scene.createItem("LP_Lightning", speaker3Pos.x, speaker3Pos.y, speaker3Pos.z+0.5);
                         highTone.play(false);
-                        Scene.schedule(highTone.stop, 1);
+                        Scene.schedule(highTone.stop, 1); //stops tone after 1 second
                     }
                 }
             }
