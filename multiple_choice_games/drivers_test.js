@@ -1,9 +1,10 @@
 //see space: https://cospac.es/GdU3
 
-//just edit the "setText()" values to customize the game to your needs
-//can work for different scenes and items just need to change the item ids
+//customization/extension suggestions: learn a new langauge by clicking various objects and selecting the correct word, explore a scene looking for clues to solve a mystery, etc.
 
-//environment created at https://studio.cospaces.io/#Gallery:37B06gl01mqnXFuMN90knO (copied to My Spaces July 26, 2017)
+//just edit the "setText()" values and/or item ids to customize the game to your needs
+
+//original environment created at https://studio.cospaces.io/#Gallery:37B06gl01mqnXFuMN90knO (copied to My Spaces July 26, 2017)
 
 var camera = Scene.getCamera(); //gets camera item
 
