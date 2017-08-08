@@ -392,6 +392,7 @@ var spawnGen = Scene.scheduleRepeating(function() {
 * HUD - Heads-Up Display
 *
 */
+/*
 var HUD = Scene.scheduleRepeating(function() {
   var cameraH = Scene.getCamera(); //gets camera item
 
@@ -419,8 +420,9 @@ var HUD = Scene.scheduleRepeating(function() {
 
   //Turn pivot object invisible so it does not block clicks
   pivot.setOpacity(0);
-
-
+}, 0);
+*/
+var score = Scene.scheduleRepeating(function() {
   //repeatedly updating scoreboard text
   var score = Scene.getItem("score");
   score.setFontSize(0.2);
