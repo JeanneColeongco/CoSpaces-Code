@@ -75,7 +75,7 @@ function delay() { //wrapping everything in a function for later use
 
     //var expand = [];
     //var shrink = [];
-    var bubbles = [];
+    var bubbles = []; //creating empty bubbles array for later use
 
     //if called on, bubbles are made and added to "bubbles" array
     function bubble() {
