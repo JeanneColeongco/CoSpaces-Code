@@ -152,7 +152,6 @@ function delay() { //wrapping everything in a function for later use
                     if (spherePos.x >= 1.5 && spherePos.x <= 2.5 && spherePos.y >= 2.5 && spherePos.y <= 3.5) {
                             sphere.say("I'm on!");
                             var electricity = Scene.createItem("LP_Lightning", spherePos.x, spherePos.y, spherePos.z+0.5);
-                            var lowTone;
                             lowTone.play(false);
                             Scene.schedule(lowTone.stop, 1);
                     }
@@ -165,7 +164,6 @@ function delay() { //wrapping everything in a function for later use
                     if (sphere2Pos.x >= 3 && sphere2Pos.x <= 4 && sphere2Pos.y >= 2.5 && sphere2Pos.y <= 3.5) {
                         sphere2.say("I'm on!");
                         var electricity2 = Scene.createItem("LP_Lightning", sphere2Pos.x, sphere2Pos.y, sphere2Pos.z+0.5);
-                        var mediumTone;
                         mediumTone.play(false);
                         Scene.schedule(mediumTone.stop, 1);
                     }
@@ -178,7 +176,6 @@ function delay() { //wrapping everything in a function for later use
                     if (sphere3Pos.x >= 4.5 && sphere3Pos.x <= 5.5 && sphere3Pos.y >= 2.5 && sphere3Pos.y <= 3.5) {
                         sphere3.say("I'm on!");
                         var electricity3 = Scene.createItem("LP_Lightning", sphere3Pos.x, sphere3Pos.y, sphere3Pos.z+0.5);
-                        var highTone;
                         highTone.play(false);
                         Scene.schedule(highTone.stop, 1);
                     }
