@@ -40,16 +40,19 @@ function delay() { //wrapping everything in a function for later use
         }, 1);
     }
 
-    //var rabbits = [];
+    var rabbits = []; //setting empty array for later use
     var score = 0; //sets variable "score" to value of 0
-
-    /*var rabbitMaker = Scene.scheduleRepeating(function() {
-        var newRabbit = makeRabbit();
-        rabbits.push(newRabbit);
+    
+    //repeatedly...
+    var rabbitMaker = Scene.scheduleRepeating(function() {
+        var newRabbit = makeRabbit(); //call makeRabbit function to make new rabbits
+        rabbits.push(newRabbit); //add new rabbit to rabbits array
+        
+        //if rabbits array length (i.e. number of rabbits) reaches more than 5
         if (rabbits.length > 5) {
-            rabbitMaker.dispose();
+            rabbitMaker.dispose(); //stop the rabbitMaker (i.e. stop repeatedly making new rabbits)
         }
-    }, 0);*/
+    }, 0);
 
     makeRabbit(); //calling make rabbit function to make a rabbit
 
@@ -71,8 +74,8 @@ function delay() { //wrapping everything in a function for later use
 
     //if dog collided with rabbit (i.e. caught the rabbit)
     dog.onCollisionEnter(function(rabbit) {
-        //var index = rabbits.indexOf(this);
-        //rabbits.splice(index, 1);
+        var index = rabbits.indexOf(this); //getting currently collided rabbit
+        rabbits.splice(index, 1); //remove rabbit from rabbits array
         rabbit.deleteFromScene(); //delete rabbit from scene
         dog.say("Woof!"); //dog lets out a gratified woof
         score++; //add 1 to score
@@ -96,12 +99,12 @@ function delay() { //wrapping everything in a function for later use
     Scene.scheduleRepeating(function() {
         var dPos = dog.getPosition(); //get dog's position
         camera.setPosition(dPos.x, dPos.y-5, 1.75); //sets camera's position to follow the dog wherever it goes
-        //scoreboard.setText("Rabbits:" + score + "/6");
+        scoreboard.setText("Rabbits:" + score + "/6");
 
-        //if score is 1...
-        if (score === 1) {
+        //if score is 6...
+        if (score === 6) {
             //show user messages
-            scoreboard.setText(/*"You caught them all!"*/ "You caught 'em!"); 
+            scoreboard.setText("You caught them all!" /*"You caught 'em!"*/); 
             scoreboard.showInfoPanel("You caught 'em!", null, null, true, function() {
                 //end the game
                 Space.finishPlayMode('67d45f92ab27de23acb9e4ae0e8b2536a96296b24b91a5a7990a05b7a173783d');
