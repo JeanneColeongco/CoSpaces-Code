@@ -8,8 +8,7 @@
 var camera = Scene.getCamera(); //gets camera item
 
 //creating/initializing scoreboard
-var stats = Scene.createTextBillboard(-2, -18, 2);
-stats.setText("Click the signs and choose thier correct meaning! Click me to start!");
+var stats = Scene.getItem("Stats"); //assumes you have created a billboard directly in scene, set the text to "Click the signs and choose their correct meaning! Click me to start!", and gave a a custom name of "Stats"
 var time = 0;
 var points = 0;
 
@@ -22,9 +21,7 @@ stats.onActivate(function() {
 });
 
 //creating car
-var car = Scene.createItem("LP_Car", 0.5, -20.5, 0);
-car.setColor(150, 0, 0);
-car.setScale(0.8);
+var car = Scene.getItem("Car"); //assumes you have created an item directly in scene and gave it a custom name of "Car"
 
 /*
 *
