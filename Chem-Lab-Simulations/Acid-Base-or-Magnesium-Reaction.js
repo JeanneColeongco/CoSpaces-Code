@@ -51,12 +51,14 @@ function delay() { //wrapping everything in a function for later use
 
     //if called, changes color of beaker contents using individual r, g, b (red, green, blue) values
     function changeColor() {
-        var color = 0; //can use one variable since I want change to happen at a regular pace to the same end number for both g and b values, if end numbers are different, different variables will be needed
+        //can use one variable since I want change to happen at a regular pace to the same end number for both g and b values
+        //if end numbers are different, different variables will be needed
+        var color = 0;
         
         //change the color of the red acid to light pink
         var makePink = Scene.scheduleRepeating(function() {
-          color += 2;
-          acid.setColor(255, color, color);
+          color += 2; //changing the color
+          acid.setColor(255, color, color); //setting the color using the changing variable, simulating a natural color change
             
           //if desired end number for g and b values is reached...
           if (color === 200) {
