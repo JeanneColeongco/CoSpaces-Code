@@ -28,7 +28,6 @@ function delay() { //wrapping everything in a function for later use
 
     //sphere (lightbulb)
     var sphere = Scene.createItem("Ellipsoid", -1.75, 2, 0);
-    sphere.setProperty("inPlace", 0);
     sphere.setScale(0.25);
     sphere.setColor(255, 255, 255);
     sphere.say("I'm light bulb one! Turn me on!");
@@ -39,7 +38,6 @@ function delay() { //wrapping everything in a function for later use
         if (spherePos.x >= 1.5 && spherePos.x <= 2.5 && spherePos.y >= 2.5 && spherePos.y <= 3.5 /*||
         spherePos.x >= 3 && spherePos.x <= 4 && spherePos.y >= 2.5 && spherePos.y <= 3.5 ||
         spherePos.x >= 4.5 && spherePos.x <= 5.5 && spherePos.y >= 2.5 && spherePos.y <= 3.5*/) {
-            sphere.setProperty("inPlace", 1);
             sphere.say("Looking good!")
         }
         else {
@@ -49,7 +47,6 @@ function delay() { //wrapping everything in a function for later use
 
     //sphere2 (lightbulb)
     var sphere2 = Scene.createItem("Ellipsoid", -1.75, 3, 0);
-    sphere2.setProperty("inPlace", 0);
     sphere2.setScale(0.25);
     sphere2.setColor(255, 255, 255);
     sphere2.say("I'm light bulb two! Turn me on!");
@@ -60,7 +57,6 @@ function delay() { //wrapping everything in a function for later use
         if (/*sphere2Pos.x >= 1.5 && sphere2Pos.x <= 2.5 && sphere2Pos.y >= 2.5 && sphere2Pos.y <= 3.5 ||*/
         sphere2Pos.x >= 3 && sphere2Pos.x <= 4 && sphere2Pos.y >= 2.5 && sphere2Pos.y <= 3.5 /*||
         sphere2Pos.x >= 4.5 && sphere2Pos.x <= 5.5 && sphere2Pos.y >= 2.5 && sphere2Pos.y <= 3.5*/) {
-            sphere2.setProperty("inPlace", 1);
             sphere2.say("Looking good!")
         }
         else {
@@ -69,7 +65,6 @@ function delay() { //wrapping everything in a function for later use
     });
 
     var sphere3 = Scene.createItem("Ellipsoid", -1.75, 4, 0);
-    sphere3.setProperty("inPlace", 0);
     sphere3.setScale(0.25);
     sphere3.setColor(255, 255, 255);
     sphere3.say("I'm light bulb three! Turn me on!");
@@ -80,7 +75,6 @@ function delay() { //wrapping everything in a function for later use
         if (/*sphere3Pos.x >= 1.5 && sphere3Pos.x <= 2.5 && sphere3Pos.y >= 2.5 && sphere3Pos.y <= 3.5 ||
         sphere3Pos.x >= 3 && sphere3Pos.x <= 4 && sphere3Pos.y >= 2.5 && sphere3Pos.y <= 3.5 ||*/
         sphere3Pos.x >= 4.5 && sphere3Pos.x <= 5.5 && sphere3Pos.y >= 2.5 && sphere3Pos.y <= 3.5) {
-            sphere3.setProperty("inPlace", 1);
             sphere3.say("Looking good!")
         }
         else {
