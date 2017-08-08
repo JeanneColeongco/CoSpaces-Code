@@ -3,7 +3,7 @@
 //game instructions: Help clear the way! Click the rock to get rid of them! You can only click on the rocks saying even numbers! Click the cars to move them forward!
 //created instructions billboard and set text directly in the scene
 
-function delay() {
+function delay() { //wrapping everything in a function for later use
     
     //initializing variables
     var time = 0;
@@ -120,4 +120,6 @@ function delay() {
     
 }
 
-Scene.schedule(delay, 2);
+Scene.schedule(delay, 2); //calling function from earlier 2 seconds after program initiates
+//this gives the user time to get into VR mode and be able to click on Scene items
+//otherwise, onActivate won't work
