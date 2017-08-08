@@ -36,9 +36,11 @@ selectLevel.onActivate(function() {
 
 /*
 *
-* HUD - Heads-Up Display
+* HUD - Heads-Up Display - will not work for VR mode since pointer is always at the centre of the screen
 *
 */
+
+/*
 var cameraH = Scene.getCamera(); //gets camera item
 
 //Enter ItemID or custom name here
@@ -64,3 +66,4 @@ Scene.scheduleRepeating(function(){
 
 //Turn pivot object invisible so it does not block clicks
 pivot.setOpacity(0);
+*/
