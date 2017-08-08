@@ -40,129 +40,156 @@ function delay() { //wrapping everything in a function for later use
         side4.setPositionAngle(-2, 3, 0, 0, 0, 5, 4.71239); //270 degrees
     }
 
-    beaker();
+    beaker(); //creating beaker by calling beaker function
 
     //helper function to generate random values
     function randNumBetween (min, max) {
         return Math.random() * (max - min) + min;
     }
 
-    var bubbles = [];
+    var bubbles = []; //creating empty bubbles array for later use
 
     //if called on, bubbles are made and added to "bubbles" array
     function bubble() {
         var makeBubble = Scene.scheduleRepeating(function() {
+            //generates bubbles at random locations within the beaker limits
             var bubble = Scene.createItem("LP_Sphere", randNumBetween(-1.8, 1.7), randNumBetween(1.3, 4.7), 3.5);
-            bubble.setColor(255, 255, 255);
-            bubbles.push(bubble);  
+            bubble.setColor(255, 255, 255); //colors bubbles white
+            bubbles.push(bubble); //adds bubbles to bubbles array
 
             //if a certain number of bubbles are made...
-            //the function stops making bubbles and...
-            //all the bubbles start to decrease with the water level...
-            //before getting deleted from the scene. 
+            
+            
+            
             if (bubbles.length > 25) {
                 bubbles.forEach(function(bubble) {
+                    //all the bubbles start to decrease with the water level before getting deleted from the scene and the bubbles array
                     bubble.move(0, 0, -3.5, function() {bubble.deleteFromScene(); var index = bubbles.indexOf(bubble);
                             bubbles.splice(index, 1);});
                 });
-                makeBubble.dispose();
+                makeBubble.dispose(); //the function stops making bubbles
             }
         }, 0);
     }
 
+    //if called on, makes bubbles sound
     function bubbleUp() {
         var bubbler = Scene.loadSound("jbROmHBPoaM5RYH0eNfIMOLyNXB7egazkUWiBiFWHld");
         bubbler.play(false);
         Scene.schedule(bubbler.stop, 2);
     }
 
+    //clickable billboard to start the evaporation reaction
     var evap = Scene.createTextBillboard(2, 0, 0);
     evap.setText("Boil the water");
-    //if the billboard is clicked...
-    //water (beaker contents) will appear (could make increase in height slowly so it looks like it's filling the beaker)
-    //the water boiling sounds will play...
-    //water level decreases and bubbles fall with it...
-    //when process is done, the beaker is again emptied (could have water level decrease in height slowly...)
-
+    
+    //if called on, calls for bubbles to be created and for the bubbles to sound
     function bubbling() {
         bubble();
         bubbleUp();
     }
-
+    
+    //if billboard is clicked...
     evap.onActivate(function() {
+        //create "water" 
         var water = Scene.createItem("Cuboid", 0, 3, 0);
-        water.setScale(3.8);
-        water.setHeight(0);
-        water.setColor(0, 100, 200);
+        water.setScale(3.8); //set size to fit beaker space
+        water.setColor(0, 100, 200); //set color to blue
+        
+        //initialize water height at 0
+        water.setHeight(0); 
         var waterH = 0;
+        
+        //repeatedly...
         var increase = Scene.scheduleRepeating(function() {
-            water.setHeight(waterH);
-            waterH+=0.01;
+            water.setHeight(waterH); //set water height to the variable "waterH"
+            waterH+=0.01; //incrememnt (increase) water height
+            
+            //if water height reaches/exceeds 1...
             if (waterH >= 1) {
-                increase.dispose();
+                increase.dispose(); //stop increasing water height
             }
         }, 0);
-
+    
+        //if called on, will...
         function boil() {            
-            var waterH = 1;
+            var waterH = 1; //sets water height to 1 (it would already be 1 from above increase function)
+            
+            //repeatedly...
             var decrease = Scene.scheduleRepeating(function() {
-                water.setHeight(waterH);
-                waterH-=0.01;
+                water.setHeight(waterH); //set water height to the variable "waterH"
+                waterH-=0.01; //decrease value of "waterH"
+                
+                //if water height reaches 0...
                 if (waterH === 0) {
-                    decrease.dispose();
+                    decrease.dispose(); //stop decreasing height
                 }
             }, 0);
         }    
-
-        Scene.schedule(bubbling, 1.5);
-        Scene.schedule(boil, 2);
+        
+        Scene.schedule(bubbling, 1.5); //calls bubbling function after a 1.5 second delay
+        Scene.schedule(boil, 2); //calls boil function after 2 second delay
         
     });
-
+    
+    //clickable billboard to start melt reaction
     var melt = Scene.createTextBillboard(-2, 0, 0);
     melt.setText("Melt the ice");
+    
     //if the billboard is clicked...
-    //ice (beaker contents) will appear
-    //ice scale decreases (shrinks) while water level rises...
-    //when process is done, the beaker is again emptied (could have water level decrease in height slowly...)
-
     melt.onActivate(function() {
-        var ice = Scene.createItem("Cuboid", 0, 3, 5);
-        ice.setScale(3.8);
-        ice.setColor(255, 255, 255);
-        ice.moveLinear(0, 3, 0, 1);
+        var ice = Scene.createItem("Cuboid", 0, 3, 5); //create an "ice" cube above the beaker
+        ice.setScale(3.8); //size cube to fill beaker space
+        ice.setColor(255, 255, 255); //color cube white
+        ice.moveLinear(0, 3, 0, 1); //move cube down into beaker
+        
+        Scene.schedule(melting, 1); //calls on melting function after 1 second delay
 
-        Scene.schedule(melting, 1);
-
+        //if called on, will...
         function melting() {
-            var scale = 3.8
+            var scale = 3.8 //set ice size (would already be set when created)
+            
+            //repeatedly...
             var melter = Scene.scheduleRepeating(function() {
-                ice.setScale(scale);
-                scale -= 0.05;
+                ice.setScale(scale); //set ice cube size to value of variable "scale"
+                scale -= 0.05; //decrease ice cube size
+                
+                //if size is less than or equal to 0...
                 if (scale <= 0) {
-                    melter.dispose();
+                    melter.dispose(); //stop decreasing
                 }
             }, 0);
-            var water = Scene.createItem("Cuboid", 0, 3, 0);
-            water.setScale(3.8)
+            
+            var water = Scene.createItem("Cuboid", 0, 3, 0); //create "water"
+            water.setScale(3.8) //set size of water to fill beaker space
+            water.setColor(0, 100, 200); //set color to blue
+            
+            //initialize water height at 0
             water.setHeight(0);
-            water.setColor(0, 100, 200);
-
             var waterH = 0;
+            
+            //repeatedly...
             var increase = Scene.scheduleRepeating(function() {
-                water.setHeight(waterH);
-                waterH+=0.01;
+                water.setHeight(waterH); //set water height to value of variable "waterH"
+                waterH+=0.01; //increase value of "waterH"
+                
+                //if water height is more than or equal to 1...
                 if (waterH >= 1) {
-                    increase.dispose();
-                    Scene.schedule(empty, 1);
+                    increase.dispose(); //stop increasing
+                    Scene.schedule(empty, 1); //call the empty function after a 1 second delay
                 }
             }, 0);
+            
+        //if called on, will...
         function empty() {
+            //repeatedly...
             var decrease = Scene.scheduleRepeating(function() {
-                water.setHeight(waterH);
-                waterH-=0.01;
+                water.setHeight(waterH); //set water height to value of variable "waterH"
+                waterH-=0.01; //decrease waterH
+                
+                //if water height reaches 0...
                 if (waterH === 0) {
-                    decrease.dispose();
+                    decrease.dispose(); //stop decreasing
                 }
             }, 0);
         }
