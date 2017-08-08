@@ -3,6 +3,9 @@
 
 //slightly modified version of parallel circuits
 
+//need to put pink speaker and resistor in correct places otherwise none of them will work
+//...weird glitch
+
 function delay() { //wrapping everything in a function for later use
 
     //marker
