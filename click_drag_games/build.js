@@ -5,9 +5,12 @@
 //e.g. for each tower of 5 blocks, you get 1 point
 //e.g. block tower tetris wherein colors matter (or don't matter)
 
+//IMPORTANT NOTE: make sure your camera is set to Fly rather than Walk (default), otherwise you'll have trouble stacking more than 2 blocks
+//Double click camera item > click second icon > select Fly
+
 /*
 *
-* HUD - Heads-Up Display - doesn't work in VR mode because the pointer is always at centre of screen
+* HUD - Heads-Up Display - doesn't work because pointer is always at centre of scene
 *
 */
 
@@ -36,10 +39,10 @@ function updateHud(offsetX, offsetY, offsetZ){
 Scene.scheduleRepeating(function(){
     updateHud(0,0,3);
 },0);
+*/
 
 //Turn pivot object invisible so it does not block clicks
 pivot.setOpacity(0);
-*/
 
 //color select, not working out right now...
 /*
