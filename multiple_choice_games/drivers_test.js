@@ -1,4 +1,4 @@
-//see space: https://cospac.es/GdU3
+//see space: https://cospac.es/GdU3 
 
 //customization/extension suggestions: learn a new langauge by clicking various objects and selecting the correct word, explore a scene looking for clues to solve a mystery, etc.
 
