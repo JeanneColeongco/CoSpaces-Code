@@ -2,7 +2,7 @@
 //navigate to scene 1 using the toggle at the bottom of the scene
 //click the beaker contents to start the reaction
 
-//possible extensions/customizations: change the start and/or end color of the reaction
+//possible extensions/customizations: change the start and/or end color of the reaction, change the color/shape of the catalyst/enzyme/base/what-have-you, change the color/size of bubbles, make bubbles that rise up from the beaker into the "air", make different catalysts/enzymes/bases/what-have-you and/or different beaker contents for different reactions, etc.
 
 function delay() { //wrapping everything in a function for later use
 
