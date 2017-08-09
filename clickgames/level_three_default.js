@@ -436,6 +436,7 @@ var score = Scene.scheduleRepeating(function() {
 //setting up the win scene
 Scene.scheduleRepeating(function() {
   if (clickCounter === 10) {
+      time = time;
       timer.dispose();
       clearWithout();
       spawnGen.dispose();
