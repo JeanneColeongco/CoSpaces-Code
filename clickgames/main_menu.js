@@ -16,7 +16,7 @@ scene: click environment > copy id in top right corner of pop-up
 //play button
 var gameName = Scene.getItem('Play');
 gameName.onActivate(function() {
-    Space.goTo("3tEosaTcOV4ztf4X3l0LTy"); //Just Play (Level 3) scene id
+    Space.goTo("M023xFYBGeZXyStk3SgX3F"); //Just Play (Level 3) scene id
 });
 
 //instructions pop-up button
