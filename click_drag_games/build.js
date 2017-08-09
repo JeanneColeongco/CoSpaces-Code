@@ -87,136 +87,144 @@ random.onActivate(function() {
 */
 
 
-/*
-*
-* creating items
-*
-*/
+function delay() { //wrapping everything in a function for later use
 
-//helper function to generate a random number between a minimum and maximum
-function randNumBetween(min, max) {
-    return Math.random() * (max - min) + min;
-}
+    /*
+    *
+    * creating items
+    *
+    */
 
-//if called on, creates a cube at a random position between -20 and 20 on the x and y axis
-function makeCube() {
-    var cube = Scene.createItem("Cuboid", randNumBetween(-20, 20), randNumBetween(-20, 20), 0);
-    cube.setColor(randNumBetween(0, 255), randNumBetween(0, 255), randNumBetween(0, 255));
-
-    //gives cube ability to be clicked and dragged, will not phase through other items in scene, will instead collide
-    cube.addMoveCollisionInteraction(); //undocumented function may be subject to change in the future
-
-    //if cube is hovered over, it will turn translucent
-    cube.onHover(function(isHovered) {
-        if (isHovered) {
-            cube.setOpacity(0.5);
-        }
-        else {
-            cube.setOpacity(1);
-        }
-    });
-}
-
-var cubes = []; //array to store all created cubes
-
-//makes 10 cubes to start with and adds them to cubes array
-var cubeMaker = Scene.scheduleRepeating(function() {
-    var newCube = makeCube();
-    cubes.push(makeCube);
-    if (cubes.length > 10) {
-        cubeMaker.dispose();
+    //helper function to generate a random number between a minimum and maximum
+    function randNumBetween(min, max) {
+        return Math.random() * (max - min) + min;
     }
-}, 0);
 
-//button to create new cubes by calling makeCube function
-var createNewCube = Scene.getItem("cubeCreator");
-createNewCube.setBackgroundColor(0, 0, 0);
-createNewCube.setTextColor(255, 255, 255);
-createNewCube.onActivate(function() {
-    makeCube();
-});
+    //if called on, creates a cube at a random position between -20 and 20 on the x and y axis
+    function makeCube() {
+        var cube = Scene.createItem("Cuboid", randNumBetween(-20, 20), randNumBetween(-20, 20), 0);
+        cube.setColor(randNumBetween(0, 255), randNumBetween(0, 255), randNumBetween(0, 255));
 
-/*
-*
-rectangle is the same as cube
-*
-*/
+        //gives cube ability to be clicked and dragged, will not phase through other items in scene, will instead collide
+        cube.addMoveCollisionInteraction(); //undocumented function may be subject to change in the future
 
-function makeRect() {
-    var rect = Scene.createItem("Cuboid", randNumBetween(-20, 20), randNumBetween(-20, 20), 0);
-    rect.setColor(randNumBetween(0, 255), randNumBetween(0, 255), randNumBetween(0, 255));
-    rect.setLength(2); //extends length of cube so it looks like a rectangle
-    rect.addMoveCollisionInteraction();
-    rect.onHover(function(isHovered) {
-        if (isHovered) {
-            rect.setOpacity(0.5);
+        //if cube is hovered over, it will turn translucent
+        cube.onHover(function(isHovered) {
+            if (isHovered) {
+                cube.setOpacity(0.5);
+            }
+            else {
+                cube.setOpacity(1);
+            }
+        });
+    }
+
+    var cubes = []; //array to store all created cubes
+
+    //makes 10 cubes to start with and adds them to cubes array
+    var cubeMaker = Scene.scheduleRepeating(function() {
+        var newCube = makeCube();
+        cubes.push(makeCube);
+        if (cubes.length > 10) {
+            cubeMaker.dispose();
         }
-        else {
-            rect.setOpacity(1);
-        }
+    }, 0);
+
+    //button to create new cubes by calling makeCube function
+    var createNewCube = Scene.getItem("cubeCreator");
+    createNewCube.setBackgroundColor(0, 0, 0);
+    createNewCube.setTextColor(255, 255, 255);
+    createNewCube.onActivate(function() {
+        makeCube();
     });
+
+    /*
+    *
+    rectangle is the same as cube
+    *
+    */
+
+    function makeRect() {
+        var rect = Scene.createItem("Cuboid", randNumBetween(-20, 20), randNumBetween(-20, 20), 0);
+        rect.setColor(randNumBetween(0, 255), randNumBetween(0, 255), randNumBetween(0, 255));
+        rect.setLength(2); //extends length of cube so it looks like a rectangle
+        rect.addMoveCollisionInteraction();
+        rect.onHover(function(isHovered) {
+            if (isHovered) {
+                rect.setOpacity(0.5);
+            }
+            else {
+                rect.setOpacity(1);
+            }
+        });
+    }
+
+    var rects = [];
+
+    var rectMaker = Scene.scheduleRepeating(function() {
+        var newRect = makeRect();
+        rects.push(newRect);
+        if (rects.length > 10) {
+            rectMaker.dispose();
+        }
+    }, 0);
+
+    var createNewRect = Scene.getItem("rectCreator");
+    createNewRect.setBackgroundColor(0, 0, 0);
+    createNewRect.setTextColor(255, 255, 255);
+    createNewRect.onActivate(function() {
+        makeRect();
+    })
+
+
+    /*
+    *
+    trees is the same as rectangle and cube
+    *
+    */
+
+    var id = "LP_Tree3"; 
+    //separated id from actual createItem declaration to try to get addMoveCollisionInteraction to work on low poly items
+
+    function makeTree() {
+        var tree = Scene.createItem(id, randNumBetween(-20, 20), randNumBetween(-20, 20), 0);
+        tree.setColor(randNumBetween(0, 255), randNumBetween(0, 255), randNumBetween(0, 255));
+        tree.setLength(2);
+        tree.addMoveCollisionInteraction(); //doesn't work for low poly items like trees
+        tree.onHover(function(isHovered) {
+            if (isHovered) {
+                tree.setOpacity(0.5);
+            }
+            else {
+                tree.setOpacity(1);
+            }
+        });
+    }
+
+    var trees = [];
+
+    //currently doesn't stop, can't figure out why...
+    /*
+    var treeMaker = Scene.scheduleRepeating(function() {
+        var newTree = makeTree();
+        trees.push(newTree);
+        if (trees.length > 5) {
+            treeMaker.dispose();
+        }
+    }, 0);
+    */
+
+    var createNewTree = Scene.getItem("treeCreator");
+    createNewTree.setBackgroundColor(0, 0, 0);
+    createNewTree.setTextColor(255, 255, 255);
+    createNewTree.onActivate(function() {
+        makeTree();
+    })
+
+    // copy, paste, edit, repeat!
+    
 }
 
-var rects = [];
-
-var rectMaker = Scene.scheduleRepeating(function() {
-    var newRect = makeRect();
-    rects.push(newRect);
-    if (rects.length > 10) {
-        rectMaker.dispose();
-    }
-}, 0);
-
-var createNewRect = Scene.getItem("rectCreator");
-createNewRect.setBackgroundColor(0, 0, 0);
-createNewRect.setTextColor(255, 255, 255);
-createNewRect.onActivate(function() {
-    makeRect();
-})
-
-
-/*
-*
-trees is the same as rectangle and cube
-*
-*/
-
-var id = "LP_Tree3"; 
-//separated id from actual createItem declaration to try to get addMoveCollisionInteraction to work on low poly items
-
-function makeTree() {
-    var tree = Scene.createItem(id, randNumBetween(-20, 20), randNumBetween(-20, 20), 0);
-    tree.setColor(randNumBetween(0, 255), randNumBetween(0, 255), randNumBetween(0, 255));
-    tree.setLength(2);
-    tree.addMoveCollisionInteraction(); //doesn't work for low poly items like trees
-    tree.onHover(function(isHovered) {
-        if (isHovered) {
-            tree.setOpacity(0.5);
-        }
-        else {
-            tree.setOpacity(1);
-        }
-    });
-}
-
-var trees = [];
-
-//currently doesn't stop, can't figure out why...
-/*
-var treeMaker = Scene.scheduleRepeating(function() {
-    var newTree = makeTree();
-    trees.push(newTree);
-    if (trees.length > 5) {
-        treeMaker.dispose();
-    }
-}, 0);
-*/
-
-var createNewTree = Scene.getItem("treeCreator");
-createNewTree.setBackgroundColor(0, 0, 0);
-createNewTree.setTextColor(255, 255, 255);
-createNewTree.onActivate(function() {
-    makeTree();
-})
-
-// copy, paste, edit, repeat!
+Scene.schedule(delay, 2); //calling function from earlier 2 seconds after program initiates
+//this gives the user time to get into VR mode and be able to click on Scene items
+//otherwise, onActivate won't work
