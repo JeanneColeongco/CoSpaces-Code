@@ -3,8 +3,8 @@
 
 //slightly modified version of simple_circuit
 
-//need to move lightbulb 1 first before the other lightbulbs will work...
-//...weird glitch
+//need to put the light bulbs in place in order otherwise the later numbered ones won't work...
+//...weird glitch, doesn't behave like parallel circuit
 
 function delay() { //wrapping everything in a function for later use
     
