@@ -49,10 +49,12 @@ function delay() { //wrapping everything in a function for later use
         item.onActivate(function() {
             //move car 1 unit along the y axis (forward from default camera view)
             item.move(0, 1);
+            Scene.loadSound("8tPh5sReqZUKkTdALbhlkdAwPykrFb6tHnNS0QC9ivN").play(); //rev engine
         });
         //if the car hits the opponent (rock)...
         item.onCollisionEnter(function(opponent) {
             item.deleteFromScene(); //delete the car from the scene
+            Scene.loadSound("FAnUWNxgaf6mby6XHF3KPdwE3JUrxj7rYdKK89XeaYX").play(); //play car crash sound
             opponent.showInfoPanel("You crashed!", null, null, null, null); //tell the user he/she crashed
         });
         //repeatedly check if the car's position is more than or equal to 9 (whether or not it has gotten to the end of opponents)
