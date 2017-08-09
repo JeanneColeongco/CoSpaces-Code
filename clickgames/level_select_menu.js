@@ -45,7 +45,7 @@ rabbit.onActivate(function() {
 var dog = Scene.getItem("JdxlTHDl2C"); //id for item placed directly in scene, can use any item from CoSpaces library
 dog.faceTo(player.item); //undocumented function, may change in the future
 dog.onActivate(function() {
-    Space.goTo("3tEosaTcOV4ztf4X3l0LTy"); //unique scene id
+    Space.goTo("M023xFYBGeZXyStk3SgX3F"); //unique scene id
 });
 
 //level 4 - TBA
