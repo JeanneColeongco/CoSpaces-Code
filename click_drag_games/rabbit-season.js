@@ -74,16 +74,17 @@ function delay() { //wrapping everything in a function for later use
 
     //if dog collided with rabbit (i.e. caught the rabbit)
     dog.onCollisionEnter(function(rabbit) {
-        var index = rabbits.indexOf(this); //getting currently collided rabbit
-        rabbits.splice(index, 1); //remove rabbit from rabbits array
-        rabbit.deleteFromScene(); //delete rabbit from scene
+        rabbit.setOpacity(0); //make rabbit disappear
         dog.say("Woof!"); //dog lets out a gratified woof
         score++; //add 1 to score
     });
-
+    
     //if dog comes out of collision with rabbit, stop barking
     dog.onCollisionExit(function(rabbit) {
-        dog.say("");
+        var index = rabbits.indexOf(this); //getting currently collided rabbit
+        rabbits.splice(index, 1); //remove rabbit from rabbits array
+        rabbit.deleteFromScene(); //delete rabbit from scene
+        dog.say(""); //dog goes back to silent concentration
     })
 
     //assumes you have created an item directly in the scene and gave it a custom name of "scoreboard"
