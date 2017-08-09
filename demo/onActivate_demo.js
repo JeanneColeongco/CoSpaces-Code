@@ -31,6 +31,7 @@ function delay() { //wrapping everything in a function for later use
         item.onActivate(function() {
             //move the car 2 units along the y axis (forward from default camera view)
             item.move(0, 2);
+            Scene.loadSound("8tPh5sReqZUKkTdALbhlkdAwPykrFb6tHnNS0QC9ivN").play(); //rev engine bonus
         });
     });
     
