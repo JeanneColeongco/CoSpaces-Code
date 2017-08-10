@@ -2,6 +2,7 @@
 
 //possible customizations/extensions: 
 //multiple people to "talk" to, "talk" in a different language to learn it, solve a mystery after interviewing suspects, etc.
+//you could make it so that there's no wrong answer, just different reactions to different answers, leading to different coversation threads
 
 //just edit the ".say()" and ".setText()" values to customize the game to your needs
 
@@ -105,7 +106,9 @@ button.onActivate(function() {
 
     //if called, makes game character continue the conversation if correct choice was clicked by player
     function next() {
-        character.say("How's it going?");
+        function newLine() {
+            character.say("How's it going?");
+        }
 
         //one choice player could make and the results if that choice is clicked
         var response1 = Scene.createTextBillboard(-5, 5, 0);
@@ -125,7 +128,7 @@ button.onActivate(function() {
             tryAgain.setText("Try Again");
             tryAgain.onActivate(function() {
                 tryAgain.deleteFromScene();
-                next();
+                newLine();
             })
         }
 
@@ -153,8 +156,7 @@ button.onActivate(function() {
         }
     }
 
-    //copy/paste/edit repeat! 
-    //copy/paste/edit "next" function so that the response variable names can stay the same...
-    //then you can just change the values of the speech bubbles and choices...
-    //you could even make it so that there's no wrong answer, just different reactions to different answers
+    //copy/paste/edit repeat!
+    //make sure it's the "next" function you copy/paste/edit so that you can reuse the response1, 2, 3, variable names
+    //you don't want them overriding each other, which they will if you leave them out in the open (outside a function like the initial responses)
 });
