@@ -157,39 +157,3 @@ Scene.scheduleRepeating(function() {
 
     //copy, paste, edit, repeat!
 }, 0);
-
-
-
-//glitching for some reason...
-/*
-*
-HUD - Heads-Up Display
-*
-*/
-
-/*
-//accessing the camera item
-var camera = Scene.getCamera();
-
-//accessing the pivot item (cube)
-var pivot = Scene.getItem("HUD-Pivot");
-pivot.setOpacity(0);
-
-//accessing the scoreboard item
-var scoreboard = Scene.getItem("Start");
-
-//designating the HUD position based on camera position
-function updateHud(offsetX, offsetY, offsetZ){
-    //Quaternion Magic
-    var d = {x: 1, y: 0, z: 0};
-    var angle = Math.PI * 0.5;
-    var sinA = Math.sin(angle * 0.5);
-    var cosA = Math.cos(angle * 0.5);
-    pivot.setRelativeToCamera(offsetX,offsetY,offsetZ,d.x * sinA,d.y * sinA,d.z * sinA,cosA);
-}
-
-//updating HUD position repeatedly many times a second so that it follows the camera
-Scene.scheduleRepeating(function(){
-    updateHud(0,0,3);
-}, 0);
-*/
