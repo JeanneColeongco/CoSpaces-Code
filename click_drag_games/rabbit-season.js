@@ -84,7 +84,11 @@ function delay() { //wrapping everything in a function for later use
         var index = rabbits.indexOf(this); //getting currently collided rabbit
         rabbits.splice(index, 1); //remove rabbit from rabbits array
         rabbit.deleteFromScene(); //delete rabbit from scene
-        dog.say(""); //dog goes back to silent concentration
+        //dog goes back to silent concentration...
+        function revert() {
+            dog.say("");
+        }
+        Scene.schedule(revert, 1);
     })
 
     //assumes you have created an item directly in the scene and gave it a custom name of "scoreboard"
