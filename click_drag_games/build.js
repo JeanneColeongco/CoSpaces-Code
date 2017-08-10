@@ -10,7 +10,7 @@
 
 /*
 *
-* HUD - Heads-Up Display - doesn't work because pointer is always at centre of scene
+* HUD - Heads-Up Display - doesn't work in VR mode because pointer is always at centre of scene
 *
 */
 
