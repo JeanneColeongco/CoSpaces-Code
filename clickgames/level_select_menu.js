@@ -1,5 +1,5 @@
 //see space: https://cospac.es/SBnH
-//navigate to second scene with the toggle at the bottom of the scene
+//navigate to scene 2 with the toggle at the bottom of the scene
 
 //buttons (billboards, animal items) need to be clicked and dragged directly onto the scene from Library > Building Blocks or Library > 3D Low Poly
 //otherwise onActivate breaks
