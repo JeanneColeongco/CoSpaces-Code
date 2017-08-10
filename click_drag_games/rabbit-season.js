@@ -54,8 +54,6 @@ function delay() { //wrapping everything in a function for later use
         }
     }, 0);
 
-    makeRabbit(); //calling make rabbit function to make a rabbit
-
     //gives user the option to use keyboard keys n, s, e, and w, standing for north, south, east, and west
     //not really practical in VR right now, but syncing controls is an option for it to work
     //onButtonDown is an undocumented function and may be subject to change in the future
