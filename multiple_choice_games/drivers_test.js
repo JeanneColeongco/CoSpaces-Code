@@ -29,8 +29,10 @@ var car = Scene.getItem("Car"); //assumes you have created an item directly in s
 Let the game begin
 *
 */
-
-var engine = Scene.loadSound("G50xr5mne1YvshUNmal8LrPaPYXLU4qGnUyetjF4kih").play();
+//repeatedly...
+Scene.scheduleRepeating(function() {
+    var engine = Scene.loadSound("G50xr5mne1YvshUNmal8LrPaPYXLU4qGnUyetjF4kih").play(); //plays busy street sounds
+}, 115.043265) //should repeat after the duration of the soundclip, but doesn't... (why?)
 //why does this break Scene Item onActivates if I include it?
 //engine.setVolume(0.5);
 
