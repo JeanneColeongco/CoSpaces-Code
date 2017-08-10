@@ -107,6 +107,7 @@ function delay() { //wrapping everything in a function for later use
                     if (num%2 === 0) {
                         //delete the opponent from the scene...
                         opponent.deleteFromScene();
+                        //remove the opponent from the opponents array
                         var index = opponents.indexOf(opponent);
                         opponents.splice(index, 1);
                         done.push(opponent); //add deleted opponent to done array
