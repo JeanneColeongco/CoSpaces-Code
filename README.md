@@ -1,9 +1,9 @@
 # CoSpaces-Code
-This repository contains JavaScript code for programs on the CoSpaces VR platform - demos and templates so that it's easier to write interactive programs from scratch without knowing much JavaScript. It might help to start with the demo folder to get familiar with the platform and/or language. If you want to start tinkering and making your own games and simulations right away, check out the other folders (although the demo is good for this too). 
-
-CoSpaces has developed a unique set of functions for use in their programming environment. You can find them here: https://cospaces.io/api/. Any function not listed there (e.g. faceTo(), getCamera(), onCollisionEnter(), etc.) may be subject to change in the future. 
+This repository contains JavaScript code for programs on the CoSpaces VR platform - demos and templates so that it's easier to write interactive programs from scratch without knowing much JavaScript. It might help to start with the demo folder to get familiar with the platform and/or language. If you want to start tinkering and making your own games and simulations right away, check out the other folders (although the demo is good for this too). If you have any questions/concerns/suggestions please don't hesitate to email chloecoleongco@gmail.com or get in touch with CoSpaces.
 
 A very helpful group of people: https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!forum/cospaces-scripting
+
+CoSpaces has developed a unique set of functions for use in their programming environment. You can find them here: https://cospaces.io/api/. Any function not listed there (e.g. faceTo(), getCamera(), onCollisionEnter(), etc.) may be subject to change in the future.
 
 The CoSpaces programming environment may not render scenes reliably either on the website or the app due to the active expansion and updating of their API and the fact that it’s a browser-based, internet-supported platform, but for simpler beginner programs this should not be an issue. Tip: only use loops if you absolutely have to and try not to use too many or have a very large one. And if interactivity functions like onActivate and onHover don't work in VR mode, put all your code inside a function, call it using CoSpaces' schedule function with a delay of about 2 seconds to give the player time to put it in VR mode before the items render, or you can create your items directly in the scene (see programs for examples).
 
