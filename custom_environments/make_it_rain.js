@@ -16,6 +16,8 @@ function randNumBetween(min, max) {
   }
 
 //var cloudID = ["LP_Cloud1", "LP_Cloud2", "LP_Cloud3"];
+//tried to make different clouds by looping through ids...
+//haven't gotten it to work properly quite yet...
 
 var cloudCount = 200;
 
@@ -48,7 +50,7 @@ function getRandPos(Min, Max) {
     return Math.random() * (max - min) + min;
 }
 
-var id = "LP_Egg";
+var id = "LP_Egg"; //could make it literally rain cats and dogs by changing this value
 
 for (var i = 0; i < 100; i++) {
     xPositions.push(getRandPos(-100,100));
@@ -58,15 +60,14 @@ for (var i = 0; i < 100; i++) {
 
 var drops = [];
 for (var i = 0; i < 100; i++) {
-    var drop = Scene.createItem(id, xPositions[i], yPositions[i], zPositions[i]) 
-    //could make it literally rain cats and dogs by changing ID parameter
+    var drop = Scene.createItem(id, xPositions[i], yPositions[i], zPositions[i]);
     drop.setScale(0.5);
     drop.setColor(217, 229, 240); 
     drops.push(drop);
 }
 
 
-Scene.scheduleRepeating(function() {
+var rain = Scene.scheduleRepeating(function() {
     
     drops.forEach(function(drop) {
         var pos = drop.getPosition();
@@ -84,10 +85,18 @@ Scene.scheduleRepeating(function() {
     
 }, 0);
 
+//starts the sky off as dark
 var mood = 0;
 Scene.scheduleRepeating(function() {
     if (mood < 1) {
-        mood += 0.001;
+        mood += 0.001; //slowly brightens the sky
         Scene.setMood(mood);
+    }
+    //makes the rain stop once the sky brightens
+    else if (mood >= 1) {
+        rain.dispose();
+        drops.forEach(function(drop) {
+            drop.deleteFromScene();
+        });
     }
 }, 3);
