@@ -1,3 +1,6 @@
+//see space: https://cospac.es/SBnH
+//nagivate to scene 4 using the toggle at the bottom of the scene
+
 //clears the scene with the exception of the items with these ids
 //note that any items you create will have their own ids
 //double click on items then click the first icon in the drop down that pops up to access them
