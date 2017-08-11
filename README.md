@@ -3,6 +3,9 @@ This repository contains JavaScript code for programs on the CoSpaces VR platfor
 
 A very helpful group of people: https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!forum/cospaces-scripting
 
+Other Materials:
+While you can code and render 3D scenes right on your computer/tablet, to view them in virtual reality, you'll need viewers or goggles (Google Cardboard V2 or IAMCARDBOARD V2 are recommended as they are very affordable (under $10) and work even on phones without a compass), and a smart phone with Android version 4.1 or higher (most phones are like this) and a gyroscope (be sure to check your specs!) and a compass if your cardboard uses a magnet button.  
+
 CoSpaces has developed a unique set of functions for use in their programming environment. You can find them here: https://cospaces.io/api/. Any function not listed there (e.g. faceTo(), getCamera(), onCollisionEnter(), etc.) may be subject to change in the future.
 
 The CoSpaces programming environment may not render scenes reliably either on the website or the app due to the active expansion and updating of their API and the fact that it’s a browser-based, internet-supported platform, but for simpler beginner programs this should not be an issue. Tip: only use loops if you absolutely have to and try not to use too many or have a very large one. And if interactivity functions like onActivate and onHover don't work in VR mode, put all your code inside a function, call it using CoSpaces' schedule function with a delay of about 2 seconds to give the player time to put it in VR mode before the items render, or you can create your items directly in the scene (see programs for examples).
